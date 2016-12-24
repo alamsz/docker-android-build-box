@@ -5,7 +5,7 @@ MAINTAINER Ming Chen
 ENV ANDROID_HOME /opt/android-sdk
 ENV ANDROID_NDK  /opt/android-ndk
 
-ENV ANDROID_BUILD_TOOLS_VERSION="25.0.1"
+ENV ANDROID_BUILD_TOOLS_VERSION="25.0.2"
 ENV ANDROID_SDK_VERSION="25.2.4"
 
 # Get the latest version from https://developer.android.com/ndk/downloads/index.html
@@ -51,9 +51,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/ && \
     apt-get clean && \
 
-    wget -q -O android-sdk.tgz https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.tgz  && \
-    tar -xzf android-sdk.tgz && \
-    rm -fr $ANDROID_HOME android-sdk.tgz && \
+    wget -q -O android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.zip  && \
+    unzip  android-sdk.zip && \
+    rm -fr $ANDROID_HOME android-sdk.zip && \
     mv android-sdk-linux $ANDROID_HOME && \
 
     # Install Android components
