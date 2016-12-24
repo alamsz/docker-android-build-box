@@ -6,7 +6,7 @@ ENV ANDROID_HOME /opt/android-sdk
 ENV ANDROID_NDK  /opt/android-ndk
 
 ENV ANDROID_BUILD_TOOLS_VERSION="25.0.1"
-ENV ANDROID_SDK_VERSION="25.1.1"
+ENV ANDROID_SDK_VERSION="25.2.4"
 
 # Get the latest version from https://developer.android.com/ndk/downloads/index.html
 ENV ANDROID_NDK_VERSION="13"
@@ -51,7 +51,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/ && \
     apt-get clean && \
 
-    wget -q -O android-sdk.tgz https://dl.google.com/android/android-sdk_r${ANDROID_SDK_VERSION}-linux.tgz  && \
+    wget -q -O android-sdk.tgz https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.tgz  && \
     tar -xzf android-sdk.tgz && \
     rm -fr $ANDROID_HOME android-sdk.tgz && \
     mv android-sdk-linux $ANDROID_HOME && \
