@@ -5,8 +5,8 @@ MAINTAINER Ming Chen
 ENV ANDROID_HOME /opt/android-sdk
 ENV ANDROID_NDK  /opt/android-ndk
 
-ENV ANDROID_BUILD_TOOLS_VERSION="24.0.2"
-ENV ANDROID_SDK_VERSION="24.4.1"
+ENV ANDROID_BUILD_TOOLS_VERSION="25.0.1"
+ENV ANDROID_SDK_VERSION="25.1.1"
 
 # Get the latest version from https://developer.android.com/ndk/downloads/index.html
 ENV ANDROID_NDK_VERSION="13"
@@ -66,6 +66,7 @@ RUN apt-get update && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-22 && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-23 && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-24 && \
+    echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-25 && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter platform-tools && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS_VERSION} && \
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository && \
