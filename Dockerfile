@@ -54,7 +54,8 @@ RUN apt-get update && \
     wget -q -O android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.zip  && \
     unzip  android-sdk.zip && \
     rm -fr $ANDROID_HOME android-sdk.zip && \
-    mv android-sdk-linux $ANDROID_HOME && \
+    mkdir -p $ANDROID_HOME && \
+    mv tools $ANDROID_HOME/ && \
 
     # Install Android components
     echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-16 && \
